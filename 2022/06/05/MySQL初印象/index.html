@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="MySQL初印象 | Hereallyicry">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="初识Vue执行逻辑： new Vue({ ​	el:’#root’, }) 执行到这里时，去找容器（id&#x3D;root），解析其中Vue语法所应转换的组件属性  Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	  区域2：key&#x3D;”valu">
+<meta name="description" content="Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	{ {  表达式  } }  区域2：key&#x3D;”value”赋值组件属性 ​			value有时要求为表达式，有时则只是普通字符串 ​			Vue规则为   当value要求为普通对象时，且想通过表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础概念">
-<meta property="og:url" content="http://example.com/2022/06/05/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:title" content="Vue基础笔记">
+<meta property="og:url" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hereallyicry">
-<meta property="og:description" content="初识Vue执行逻辑： new Vue({ ​	el:’#root’, }) 执行到这里时，去找容器（id&#x3D;root），解析其中Vue语法所应转换的组件属性  Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	  区域2：key&#x3D;”valu">
+<meta property="og:description" content="Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	{ {  表达式  } }  区域2：key&#x3D;”value”赋值组件属性 ​			value有时要求为表达式，有时则只是普通字符串 ​			Vue规则为   当value要求为普通对象时，且想通过表">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-04T19:43:16.000Z">
-<meta property="article:modified_time" content="2022-06-05T16:29:27.014Z">
+<meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png">
+<meta property="article:published_time" content="2022-06-06T16:13:29.000Z">
+<meta property="article:modified_time" content="2022-06-06T16:22:59.605Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -255,11 +257,11 @@
     <nav id="title-list-nav">
         
         <a  class="全部文章 "
-           href="/2022/06/05/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"
+           href="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Vue基础概念">Vue基础概念</span>
-            <span class="post-date" title="2022-06-05 03:43:16">2022/06/05</span>
+            <span class="post-title" title="Vue基础笔记">Vue基础笔记</span>
+            <span class="post-date" title="2022-06-07 00:13:29">2022/06/07</span>
         </a>
         
         <a  class="全部文章 "

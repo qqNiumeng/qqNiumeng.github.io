@@ -2,21 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vue基础概念 | Hereallyicry</title>
+  <title>Vue基础笔记 | Hereallyicry</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Vue基础概念 | Hereallyicry">
+  <meta name="description" content="Vue基础笔记 | Hereallyicry">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="初识Vue执行逻辑： new Vue({ ​	el:’#root’, }) 执行到这里时，去找容器（id&#x3D;root），解析其中Vue语法所应转换的组件属性  Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	  区域2：key&#x3D;”valu">
+<meta name="description" content="Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	{ {  表达式  } }  区域2：key&#x3D;”value”赋值组件属性 ​			value有时要求为表达式，有时则只是普通字符串 ​			Vue规则为   当value要求为普通对象时，且想通过表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础概念">
-<meta property="og:url" content="http://example.com/2022/06/05/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:title" content="Vue基础笔记">
+<meta property="og:url" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hereallyicry">
-<meta property="og:description" content="初识Vue执行逻辑： new Vue({ ​	el:’#root’, }) 执行到这里时，去找容器（id&#x3D;root），解析其中Vue语法所应转换的组件属性  Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	  区域2：key&#x3D;”valu">
+<meta property="og:description" content="Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	{ {  表达式  } }  区域2：key&#x3D;”value”赋值组件属性 ​			value有时要求为表达式，有时则只是普通字符串 ​			Vue规则为   当value要求为普通对象时，且想通过表">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-04T19:43:16.000Z">
-<meta property="article:modified_time" content="2022-06-05T16:29:27.014Z">
+<meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png">
+<meta property="article:published_time" content="2022-06-06T16:13:29.000Z">
+<meta property="article:modified_time" content="2022-06-06T16:22:59.605Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -255,11 +257,11 @@
     <nav id="title-list-nav">
         
         <a  class="全部文章 "
-           href="/2022/06/05/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"
+           href="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Vue基础概念">Vue基础概念</span>
-            <span class="post-date" title="2022-06-05 03:43:16">2022/06/05</span>
+            <span class="post-title" title="Vue基础笔记">Vue基础笔记</span>
+            <span class="post-date" title="2022-06-07 00:13:29">2022/06/07</span>
         </a>
         
         <a  class="全部文章 "
@@ -288,9 +290,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Vue基础概念" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Vue基础笔记" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Vue基础概念</h1>
+        <h1 class="article-title">Vue基础笔记</h1>
     
     <div class="article-meta">
         
@@ -300,7 +302,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-06-06 00:29:27'>2022-06-05 03:43</time>
+            发布时间 : <time class="date" title='最后更新: 2022-06-07 00:22:59'>2022-06-07 00:13</time>
         
     </div>
     <div class="article-meta">
@@ -322,7 +324,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E8%AF%86Vue"><span class="toc-text">初识Vue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E5%85%BC%E5%AE%B9html%E8%A7%84%E5%88%99"><span class="toc-text">Vue兼容html规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E4%B8%8E%E4%BB%A3%E7%90%86"><span class="toc-text">数据绑定与代理</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E5%85%BC%E5%AE%B9html%E8%A7%84%E5%88%99"><span class="toc-text">Vue兼容html规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E4%B8%8E%E4%BB%A3%E7%90%86"><span class="toc-text">数据绑定与代理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%EF%BC%9A"><span class="toc-text">数据绑定：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">数据绑定的原理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">代理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-text">解析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="toc-text">计算属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7"><span class="toc-text">监视属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93%E3%80%81%E8%BF%87%E6%BB%A4%E3%80%81%E6%8E%92%E5%BA%8F"><span class="toc-text">列表渲染、过滤、排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#key%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">key原理：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">vue生命周期</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -338,33 +340,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="初识Vue"><a href="#初识Vue" class="headerlink" title="初识Vue"></a>初识Vue</h4><p>执行逻辑：</p>
-<p>new Vue({</p>
-<p>​	el:’#root’,</p>
-<p>})</p>
-<p>执行到这里时，去找容器（id&#x3D;root），解析其中Vue语法所应转换的组件属性</p>
-<hr>
-<h4 id="Vue兼容html规则"><a href="#Vue兼容html规则" class="headerlink" title="Vue兼容html规则"></a>Vue兼容html规则</h4><p>&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt;</p>
+        <h3 id="Vue兼容html规则"><a href="#Vue兼容html规则" class="headerlink" title="Vue兼容html规则"></a>Vue兼容html规则</h3><p>&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt;</p>
 <p>区域1：可输入直接展示的字串或嵌套其他组件</p>
-<p>​			Vue规则为	 </p>
+<p>​			Vue规则为	{ {  表达式  } } </p>
 <p>区域2：key&#x3D;”value”赋值组件属性</p>
 <p>​			value有时要求为表达式，有时则只是普通字符串</p>
-<p>​			Vue规则为   当value要求为普通对象时，且想通过表达式传递值时，可以加上v-bind：前缀,Vue解析模板时会替换。</p>
+<p>​			Vue规则为   当value要求为普通对象时，且想通过表达式传递值时，可以加上v-bind：前缀,Vue解析模板时视为表达式。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">    &lt;h1 v-bind:value=&quot;name&quot;&gt;</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">    &lt;!-- 简写1 ：value=&quot;name&quot;--&gt;</span><br><span class="line">	&lt;!-- 简写2: v-bind=&quot;name&quot; 默认赋给value属性--&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&#x27;#root&#x27;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            name:&#x27;jack&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
 
 <hr>
-<h4 id="数据绑定与代理"><a href="#数据绑定与代理" class="headerlink" title="数据绑定与代理"></a>数据绑定与代理</h4><p>数据绑定：</p>
-<p>​		使用 v-bind时，Vue单向检测到引用的data下的变量变化（如上例中name）时，会及时重新解析容器，重新渲染展示最新的变量值</p>
+<h3 id="数据绑定与代理"><a href="#数据绑定与代理" class="headerlink" title="数据绑定与代理"></a>数据绑定与代理</h3><h5 id="数据绑定："><a href="#数据绑定：" class="headerlink" title="数据绑定："></a>数据绑定：</h5><p>​		使用 v-bind时，Vue单向检测到引用的data下的变量变化（如上例中name）时，会及时重新解析容器，重新渲染展示最新的变量值</p>
 <p>​		使用v-model时，Vue双向检测页面输入的值、data下引用的变量，使二者数值保持一致。</p>
-<p>数据绑定的原理：</p>
-<p>​		1.表达式可以直接访问data内变量，因为Vue代理了data对象中的字段</p>
-<p>​		2.前端页面值变——&gt;$data变量随着变  $data变量变——&gt;前端页面值变</p>
-<p>​				因为数据劫持？？</p>
-<p>​				页面值Vue怎么检测？</p>
-<p>代理：		</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">题外话：js给对象增加属性key</span><br><span class="line">	对象名.新属性名 = 属性值</span><br><span class="line">如  Vue._proto_.aa= &#x27;gaga&#x27;;</span><br><span class="line">	js删除对象属性</span><br><span class="line">	delete Vue._proto_.aa;</span><br></pre></td></tr></table></figure>
+<h5 id="数据绑定的原理："><a href="#数据绑定的原理：" class="headerlink" title="数据绑定的原理："></a>数据绑定的原理：</h5><p>​		1.表达式可以直接访问data内变量，因为Vue代理了data对象中的字段</p>
+<p>​		2.前端页面值变——&gt;$data变量随着变</p>
+<p>​			  $data变量变——&gt;前端页面值变</p>
+<p>​			类似解析的过程和解析的反过程	</p>
+<h5 id="代理："><a href="#代理：" class="headerlink" title="代理："></a>代理：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">题外话：js给对象增加属性key</span><br><span class="line">	对象名.新属性名 = 属性值</span><br><span class="line">如  Vue._proto_.aa= &#x27;gaga&#x27;;</span><br><span class="line">	js删除对象属性</span><br><span class="line">	delete Vue._proto_.aa;</span><br></pre></td></tr></table></figure>
 
 <p>此外，还有一个api可以新增对象字段，并指定新增字段所代理的 变量</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj, prop, descriptor);</span><br><span class="line"><span class="comment">//obj:对象</span></span><br><span class="line"><span class="comment">//prop：新增的字段名</span></span><br><span class="line"><span class="comment">/*descriptor：配置对象&#123;</span></span><br><span class="line"><span class="comment">	众多属性中有一个getter和setter</span></span><br><span class="line"><span class="comment">	get：function()&#123;</span></span><br><span class="line"><span class="comment">		return  被代理的对象值</span></span><br><span class="line"><span class="comment">	&#125;,</span></span><br><span class="line"><span class="comment">	set:function(value)&#123;</span></span><br><span class="line"><span class="comment">	    被代理的对象 = value;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -373,8 +366,36 @@
 <p>set方法在prop被赋值时调用，赋值给 被代理的对象。</p>
 <p>prop没有实际的存储内容，它代理了某个字段，感觉就是把该字段封装到了自己的逻辑内，也像引用。</p>
 <p>可以暴露被代理的字段，但注意不能随便删除。</p>
-<p>vue的$属性有啥特殊的吗？</p>
+<h5 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h5><p>？？？</p>
+<hr>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>标签或组件的响应行为</p>
+<h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>计算属性是现存属性的代理者且getter、setter可以以某种计算关系 return   f (被代理字段)</p>
+<h4 id="监视属性"><a href="#监视属性" class="headerlink" title="监视属性"></a>监视属性</h4><p>监视data某属性的字面值，字面值变动时会调用handler方法；</p>
+<p>深度监视：当监视data内对象属性内的属性变化时，也会调用handler方法；</p>
+<p>​	开启条件：监视属性的 配置对象中 deep:true</p>
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><h4 id="列表渲染、过滤、排序"><a href="#列表渲染、过滤、排序" class="headerlink" title="列表渲染、过滤、排序"></a>列表渲染、过滤、排序</h4><h5 id="key原理："><a href="#key原理：" class="headerlink" title="key原理："></a>key原理：</h5><p>vue使用key属性管理虚拟dom的对比算法的比较依据，依据key的对应关系，将新的虚拟DOM信息补充到旧的DOM信息中，装载完成时（真实DOM）key销毁</p>
+<p>【易错点】</p>
+<ul>
+<li>以数组的索引index为key，引起的对比算法出错</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;li v-for=&quot;(stu,index) in students&quot; :key=&quot;index&quot;&gt;</span><br><span class="line"> &#123;&#123;stu.name&#125;&#125;-&#123;&#123;stu.age&#125;&#125;</span><br><span class="line">    &lt;input type=&quot;text&quot;&gt;&lt;/input&gt;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
 
+<p>假设在输入框输入对应信息</p>
+<p>当使用数组api在数组index&#x3D;0的位置插入新数据时，Vue依据对比算法重新渲染页面，此时会出现意想不到的结果</p>
+<img src="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png" class="" title="这是一张图片">![image-20220606233226859](E:\blog\source\_posts\Vue基础笔记\image-20220606233226859.png)
+
+<p>因为</p>
+<ul>
+<li>数组下标index  插入前后对应数据是变化的，key也随之变化</li>
+</ul>
+<p>​			0张三1李四2王五————0老刘1张三2李四3王五</p>
+<ul>
+<li>而右侧输入框key值始终没有变动</li>
+</ul>
+<p>​			所以出现匹配上的差错</p>
+<p>即用数组下标index做为key是不准确的，需要一个不因数组插入顺序而引起变动的恒定的关系值来作为key值，比如主键</p>
+<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><p>？？  P45</p>
+<h4 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h4>
       
        
     </div>
