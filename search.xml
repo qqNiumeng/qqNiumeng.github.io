@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Vue基础概念</title>
+      <link href="/2022/06/05/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/"/>
+      <url>/2022/06/05/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<h4 id="初识Vue"><a href="#初识Vue" class="headerlink" title="初识Vue"></a>初识Vue</h4><p>执行逻辑：</p><p>new Vue({</p><p>​el:’#root’,</p><p>})</p><p>执行到这里时，去找容器（id&#x3D;root），解析其中Vue语法所应转换的组件属性</p><hr><h4 id="Vue兼容html规则"><a href="#Vue兼容html规则" class="headerlink" title="Vue兼容html规则"></a>Vue兼容html规则</h4><p>&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt;</p><p>区域1：可输入直接展示的字串或嵌套其他组件</p><p>​Vue规则为 </p><p>区域2：key&#x3D;”value”赋值组件属性</p><p>​value有时要求为表达式，有时则只是普通字符串</p><p>​Vue规则为   当value要求为普通对象时，且想通过表达式传递值时，可以加上v-bind：前缀,Vue解析模板时会替换。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">    &lt;h1 v-bind:value=&quot;name&quot;&gt;</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">    &lt;!-- 简写1 ：value=&quot;name&quot;--&gt;</span><br><span class="line">&lt;!-- 简写2: v-bind=&quot;name&quot; 默认赋给value属性--&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"></span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&#x27;#root&#x27;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            name:&#x27;jack&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><hr><h4 id="数据绑定与代理"><a href="#数据绑定与代理" class="headerlink" title="数据绑定与代理"></a>数据绑定与代理</h4><p>数据绑定：</p><p>​使用 v-bind时，Vue单向检测到引用的data下的变量变化（如上例中name）时，会及时重新解析容器，重新渲染展示最新的变量值</p><p>​使用v-model时，Vue双向检测页面输入的值、data下引用的变量，使二者数值保持一致。</p><p>数据绑定的原理：</p><p>​1.表达式可以直接访问data内变量，因为Vue代理了data对象中的字段</p><p>​2.前端页面值变——&gt;$data变量随着变  $data变量变——&gt;前端页面值变</p><p>​因为数据劫持？？</p><p>​页面值Vue怎么检测？</p><p>代理：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">题外话：js给对象增加属性key</span><br><span class="line">对象名.新属性名 = 属性值</span><br><span class="line">如  Vue._proto_.aa= &#x27;gaga&#x27;;</span><br><span class="line">js删除对象属性</span><br><span class="line">delete Vue._proto_.aa;</span><br></pre></td></tr></table></figure><p>此外，还有一个api可以新增对象字段，并指定新增字段所代理的 变量</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj, prop, descriptor);</span><br><span class="line"><span class="comment">//obj:对象</span></span><br><span class="line"><span class="comment">//prop：新增的字段名</span></span><br><span class="line"><span class="comment">/*descriptor：配置对象&#123;</span></span><br><span class="line"><span class="comment">众多属性中有一个getter和setter</span></span><br><span class="line"><span class="comment">get：function()&#123;</span></span><br><span class="line"><span class="comment">return  被代理的对象值</span></span><br><span class="line"><span class="comment">&#125;,</span></span><br><span class="line"><span class="comment">set:function(value)&#123;</span></span><br><span class="line"><span class="comment">    被代理的对象 = value;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br></pre></td></tr></table></figure><p>get方法在prop被读取之前调用，返回值即prop被读取到的值；</p><p>set方法在prop被赋值时调用，赋值给 被代理的对象。</p><p>prop没有实际的存储内容，它代理了某个字段，感觉就是把该字段封装到了自己的逻辑内，也像引用。</p><p>可以暴露被代理的字段，但注意不能随便删除。</p><p>vue的$属性有啥特殊的吗？</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL初印象</title>
+      <link href="/2022/06/05/MySQL%E5%88%9D%E5%8D%B0%E8%B1%A1/"/>
+      <url>/2022/06/05/MySQL%E5%88%9D%E5%8D%B0%E8%B1%A1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><p>查有联表和组合，</p><p>函数不过字段集合。</p><p>过滤得分行分组，</p><p>行过滤全文本还是正则？</p><p>事务擅使细致多，</p><p>游标循环是一伙。</p><p>视图也要挑大梁，</p><p>触发器存储来帮忙。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
