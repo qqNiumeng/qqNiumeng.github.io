@@ -14,8 +14,16 @@
 <meta property="og:description" content="Vue兼容html规则&lt;组件名称   区域2（组件属性赋值）&gt;   区域1 &lt;&#x2F;组件名称&gt; 区域1：可输入直接展示的字串或嵌套其他组件 ​			Vue规则为	{ {  表达式  } }  区域2：key&#x3D;”value”赋值组件属性 ​			value有时要求为表达式，有时则只是普通字符串 ​			Vue规则为   当value要求为普通对象时，且想通过表">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png">
+<meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/proto.png">
+<meta property="og:image" content="e:/blog/source_posts/Vue基础笔记/proto.png">
+<meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/bus.png">
+<meta property="og:image" content="e:/blog/source_posts/Vue基础笔记/bus.png">
+<meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/daili1.jpg">
+<meta property="og:image" content="e:/blog/source/_posts/Vue基础笔记/daili1.jpg">
+<meta property="og:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/daili2.jpg">
+<meta property="og:image" content="e:/blog/source_posts/Vue基础笔记/daili2.jpg">
 <meta property="article:published_time" content="2022-06-06T16:13:29.000Z">
-<meta property="article:modified_time" content="2022-06-06T16:22:59.605Z">
+<meta property="article:modified_time" content="2022-06-07T16:05:54.631Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/image-20220606233226859.png">
@@ -302,7 +310,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-06-07 00:22:59'>2022-06-07 00:13</time>
+            发布时间 : <time class="date" title='最后更新: 2022-06-08 00:05:54'>2022-06-07 00:13</time>
         
     </div>
     <div class="article-meta">
@@ -324,7 +332,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E5%85%BC%E5%AE%B9html%E8%A7%84%E5%88%99"><span class="toc-text">Vue兼容html规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E4%B8%8E%E4%BB%A3%E7%90%86"><span class="toc-text">数据绑定与代理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%EF%BC%9A"><span class="toc-text">数据绑定：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">数据绑定的原理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">代理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-text">解析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="toc-text">计算属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7"><span class="toc-text">监视属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93%E3%80%81%E8%BF%87%E6%BB%A4%E3%80%81%E6%8E%92%E5%BA%8F"><span class="toc-text">列表渲染、过滤、排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#key%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">key原理：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">vue生命周期</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E5%85%BC%E5%AE%B9html%E8%A7%84%E5%88%99"><span class="toc-text">Vue兼容html规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E4%B8%8E%E4%BB%A3%E7%90%86"><span class="toc-text">数据绑定与代理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%EF%BC%9A"><span class="toc-text">数据绑定：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">数据绑定的原理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-text">代理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-text">解析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="toc-text">计算属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7"><span class="toc-text">监视属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93%E3%80%81%E8%BF%87%E6%BB%A4%E3%80%81%E6%8E%92%E5%BA%8F"><span class="toc-text">列表渲染、过滤、排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#key%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">key原理：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">vue生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%8F%8A%E7%BB%84%E4%BB%B6%E5%B5%8C%E5%A5%97"><span class="toc-text">组件及组件嵌套</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ref%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7"><span class="toc-text">ref标签属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E7%BA%A7%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%EF%BC%88%E4%B8%8A%E7%BA%A7%E8%8E%B7%E5%8F%96%E4%B8%8B%E7%BA%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%89"><span class="toc-text">上下级组件间通信（上级获取下级组件的属性）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#props%E9%85%8D%E7%BD%AE%E9%A1%B9"><span class="toc-text">props配置项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E7%BA%A7%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%EF%BC%88%E4%B8%8A%E7%BA%A7%E2%80%94%E2%80%94-gt-%E4%B8%8B%E7%BA%A7%EF%BC%89-props%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE"><span class="toc-text">上下级组件间通信（上级——&gt;下级）   props接收数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E7%BA%A7%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%EF%BC%88%E4%B8%8B%E7%BA%A7%E2%80%94%E2%80%94-gt-%E4%B8%8A%E7%BA%A7%EF%BC%89-props%E6%8E%A5%E6%94%B6%E5%87%BD%E6%95%B0"><span class="toc-text">上下级组件间通信（下级——&gt;上级）  props接收函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8"><span class="toc-text">浏览器本地存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BA%8B%E4%BB%B6%E6%80%BB%E7%BA%BF%EF%BC%88%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%EF%BC%89"><span class="toc-text">全局事件总线（全局组件通信）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%A6%81%E7%B4%A01%EF%BC%9A%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E8%83%BD%E5%A4%9F%E5%85%B1%E7%94%A8"><span class="toc-text">关键要素1：所有组件能够共用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%A6%81%E7%B4%A02%EF%BC%9A%E8%83%BD%E8%B0%83%E7%94%A8%E5%A6%82%E4%B8%8B%E6%96%B9%E6%B3%95"><span class="toc-text">关键要素2：能调用如下方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%A6%81%E7%B4%A03%EF%BC%9A%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E4%BD%93this%E6%8C%87%E5%90%91%E5%A3%B0%E6%98%8E%E5%AE%83%E7%9A%84%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B"><span class="toc-text">关键要素3：回调函数体this指向声明它的组件实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A2%E9%98%85%E5%8F%91%E5%B8%83"><span class="toc-text">消息订阅发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%90%86"><span class="toc-text">代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex"><span class="toc-text">Vuex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-text">路由</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -368,12 +376,12 @@
 <p>可以暴露被代理的字段，但注意不能随便删除。</p>
 <h5 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h5><p>？？？</p>
 <hr>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>标签或组件的响应行为</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>元素标签或组件标签的响应行为</p>
 <h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>计算属性是现存属性的代理者且getter、setter可以以某种计算关系 return   f (被代理字段)</p>
 <h4 id="监视属性"><a href="#监视属性" class="headerlink" title="监视属性"></a>监视属性</h4><p>监视data某属性的字面值，字面值变动时会调用handler方法；</p>
 <p>深度监视：当监视data内对象属性内的属性变化时，也会调用handler方法；</p>
 <p>​	开启条件：监视属性的 配置对象中 deep:true</p>
-<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><h4 id="列表渲染、过滤、排序"><a href="#列表渲染、过滤、排序" class="headerlink" title="列表渲染、过滤、排序"></a>列表渲染、过滤、排序</h4><h5 id="key原理："><a href="#key原理：" class="headerlink" title="key原理："></a>key原理：</h5><p>vue使用key属性管理虚拟dom的对比算法的比较依据，依据key的对应关系，将新的虚拟DOM信息补充到旧的DOM信息中，装载完成时（真实DOM）key销毁</p>
+<h4 id="列表渲染、过滤、排序"><a href="#列表渲染、过滤、排序" class="headerlink" title="列表渲染、过滤、排序"></a>列表渲染、过滤、排序</h4><h5 id="key原理："><a href="#key原理：" class="headerlink" title="key原理："></a>key原理：</h5><p>vue使用key属性管理虚拟dom的对比算法的比较依据，依据key的对应关系，将新的虚拟DOM信息补充到旧的DOM信息中，装载完成时（真实DOM）key销毁</p>
 <p>【易错点】</p>
 <ul>
 <li>以数组的索引index为key，引起的对比算法出错</li>
@@ -393,9 +401,77 @@
 <li>而右侧输入框key值始终没有变动</li>
 </ul>
 <p>​			所以出现匹配上的差错</p>
-<p>即用数组下标index做为key是不准确的，需要一个不因数组插入顺序而引起变动的恒定的关系值来作为key值，比如主键</p>
-<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><p>？？  P45</p>
-<h4 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h4>
+<p>即用数组下标index做为key是不准确的，需要一个不因数组插入顺序而引起变动的恒定的关系值来作为key值，类似记录的主键</p>
+<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><p>与原生指令比较：</p>
+<ul>
+<li>本质是自定义回调函数及触发器</li>
+<li>触发时机固定（指令与元素成功绑定、元素被插入页面时、指令所在模板被解析时）</li>
+</ul>
+<h4 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h4><p>四对钩子</p>
+<ul>
+<li>beforeCreate    （创建数据监测、数据代理前后） created</li>
+<li>beforeMount       （挂载前后）   mounted</li>
+<li>beforeUpdate       （更新前后）   updated</li>
+<li>beforeDestroy        （销毁前后）  destroyed</li>
+</ul>
+<h4 id="组件及组件嵌套"><a href="#组件及组件嵌套" class="headerlink" title="组件及组件嵌套"></a>组件及组件嵌套</h4><h4 id="ref标签属性"><a href="#ref标签属性" class="headerlink" title="ref标签属性"></a>ref标签属性</h4><p>&lt; template &gt; &lt; &#x2F;template &gt;内附加给某标签（元素标签、组件标签）上ref&#x3D;”引用名称”,</p>
+<p>则可以通过当前Vue实例.$refs.引用名称 获取该标签的引用。</p>
+<h5 id="上下级组件间通信（上级获取下级组件的属性）"><a href="#上下级组件间通信（上级获取下级组件的属性）" class="headerlink" title="上下级组件间通信（上级获取下级组件的属性）"></a>上下级组件间通信（上级获取下级组件的属性）</h5><h4 id="props配置项"><a href="#props配置项" class="headerlink" title="props配置项"></a>props配置项</h4><ul>
+<li>配置在下级组件VC配置项props：{key1:配置对象1,key2:配置对象2}中，上级组件可以在调用时直接传值</li>
+</ul>
+<p>&lt; Student  key1&#x3D;”…”  &#x2F; &gt;</p>
+<h5 id="上下级组件间通信（上级——-gt-下级）-props接收数据"><a href="#上下级组件间通信（上级——-gt-下级）-props接收数据" class="headerlink" title="上下级组件间通信（上级——&gt;下级）   props接收数据"></a>上下级组件间通信（上级——&gt;下级）   props接收数据</h5><ul>
+<li>特殊用法：上级组件可以把自己定义的函数赋值给下级，下级用props:[‘函数名’],接收且可以封装到自己的函数中。函数体内this指向声明它的组件实例</li>
+</ul>
+<h5 id="上下级组件间通信（下级——-gt-上级）-props接收函数"><a href="#上下级组件间通信（下级——-gt-上级）-props接收函数" class="headerlink" title="上下级组件间通信（下级——&gt;上级）  props接收函数"></a>上下级组件间通信（下级——&gt;上级）  props接收函数</h5><h4 id="浏览器本地存储"><a href="#浏览器本地存储" class="headerlink" title="浏览器本地存储"></a>浏览器本地存储</h4><ul>
+<li><p>SessionStorage存储内容浏览器关闭时清除</p>
+</li>
+<li><p>LocalStorage浏览器不清除，需手动清除</p>
+</li>
+<li><p>5MB左右</p>
+</li>
+</ul>
+<h4 id="全局事件总线（全局组件通信）"><a href="#全局事件总线（全局组件通信）" class="headerlink" title="全局事件总线（全局组件通信）"></a>全局事件总线（全局组件通信）</h4><ul>
+<li>原型继承链</li>
+</ul>
+<img src="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/proto.png" class="" title="这是一张图片">
+
+<p><img src="E:\blog\source_posts\Vue基础笔记\proto.png" alt="proto"></p>
+<p>概括的说</p>
+<ul>
+<li><p>Vue原型类 继承了Object    VueComponent原型类 继承了Vue原型</p>
+</li>
+<li><p>而 new  Vue((配置项)) 是利用输入的配置信息修改和拓展了Vue原型类的定义   即Vue实例的匿名类 继承了 Vue原型类</p>
+</li>
+<li><p>同理 VueComponent实例的匿名类  继承了 VueComponent原型类</p>
+</li>
+</ul>
+<p>vue不讲究访问权限，即继承链以上的属性和方法都可以调用</p>
+<h5 id="关键要素1：所有组件能够共用"><a href="#关键要素1：所有组件能够共用" class="headerlink" title="关键要素1：所有组件能够共用"></a>关键要素1：所有组件能够共用</h5><p>想要Vue实例和VueComponent实例都能调用的属性，则属性必须在Vue原型类上或者Object类（排除）上才符合</p>
+<h5 id="关键要素2：能调用如下方法"><a href="#关键要素2：能调用如下方法" class="headerlink" title="关键要素2：能调用如下方法"></a>关键要素2：能调用如下方法</h5><p>Vue的原型类上的三个方法：</p>
+<ul>
+<li>$on 绑定事件    .$on(‘事件名’，响应函数)</li>
+<li>$off 卸载事件   </li>
+<li>$emit 调用事件     .$emit(‘事件名’，参数列表)</li>
+</ul>
+<p>综上，可以考虑在Vue原型类上新增一个对象(所有组件能够共用)，这个对象是Vue或者VueComponent实例（能调用$on方法）</p>
+<p>假设是 Vue原型类上新增x对象</p>
+<h5 id="关键要素3：回调函数体this指向声明它的组件实例"><a href="#关键要素3：回调函数体this指向声明它的组件实例" class="headerlink" title="关键要素3：回调函数体this指向声明它的组件实例"></a>关键要素3：回调函数体this指向声明它的组件实例</h5><p>如下图，1、组件A中通过原型链引用x，绑定事件a</p>
+<p>2、组件D组件A中通过原型链引用x，调用事件a，传参666</p>
+<p>3、A中的回调函数利用this接收传入的参数信息</p>
+<img src="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/bus.png" class="" title="这是一张图片">
+
+<p><img src="E:\blog\source_posts\Vue基础笔记\bus.png" alt="bus"></p>
+<h4 id="消息订阅发布"><a href="#消息订阅发布" class="headerlink" title="消息订阅发布"></a>消息订阅发布</h4><p>依赖外部插件</p>
+<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><img src="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/daili1.jpg" class="" title="这是一张图片">
+
+<img src="E:\blog\source\_posts\Vue基础笔记\daili1.jpg" alt="daili1" style="zoom: 33%;" />
+
+<hr>
+<img src="/2022/06/07/Vue%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/daili2.jpg" class="" title="这是一张图片">
+
+<p><img src="E:\blog\source_posts\Vue基础笔记\daili2.jpg" alt="daili2"></p>
+<h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><h4 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4><h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4>
       
        
     </div>
